@@ -1,4 +1,4 @@
-# Picker
+# Progress-Views
 Android Library to use progress views.
 
 ### Developed by
