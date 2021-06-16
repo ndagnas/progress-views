@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">progress-views</string>
+
+	<string name="activity_main_open_progress_view">open</string>
+</resources>

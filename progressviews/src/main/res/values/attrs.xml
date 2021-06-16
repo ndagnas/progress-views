@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ColoredProgressView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="barColorStart" format="color" />
+        <attr name="barColorEnd" format="color" />
+        <attr name="barWidth" format="dimension" />
+        <attr name="maxValue" format="float" />
+        <attr name="startAngle" format="float" />
+        <attr name="text" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="textMode" format="enum">
+            <enum name="Text" value="0" />
+            <enum name="Percent" value="1" />
+            <enum name="Value" value="2" />
+        </attr>
+        <attr name="textSize" format="dimension" />
+        <attr name="value" format="float" />
+    </declare-styleable>
+
+</resources>

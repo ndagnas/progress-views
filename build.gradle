@@ -1,0 +1,63 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.4'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'maven'
+    }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.ndagnas'
+            artifactId = 'progressviews'
+            version = '0.1.0'
+
+            from components.java
+
+            pom {
+                // Add your description here
+                name = 'Progress-Views'
+                description = 'Android library providing a list of progress views.'
+                url = 'https://github.com/ndagnas/progress-views'
+
+                // Set your license
+                licenses {
+                    license {
+                        name = 'The Apache Software License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'ndagnas'
+                        name = 'Nicolas Dagnas'
+                        email = 'ndagnas@live.fr'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/ndagnas/progress-views.git'
+                    developerConnection = 'https://github.com/ndagnas/progress-views.git'
+                    url = 'https://github.com/ndagnas/progress-views'
+                }
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
