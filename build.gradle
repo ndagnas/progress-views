@@ -6,52 +6,10 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.4'
-    }
-}
+        classpath 'com.android.tools.build:gradle:3.4.2'
 
-plugins {
-    id 'java'
-    id 'maven-publish'
-    id 'maven'
-    }
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.ndagnas'
-            artifactId = 'progressviews'
-            version = '0.1.0'
-
-            from components.java
-
-            pom {
-                // Add your description here
-                name = 'Progress-Views'
-                description = 'Android library providing a list of progress views.'
-                url = 'https://github.com/ndagnas/progress-views'
-
-                // Set your license
-                licenses {
-                    license {
-                        name = 'The Apache Software License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id = 'ndagnas'
-                        name = 'Nicolas Dagnas'
-                        email = 'ndagnas@live.fr'
-                    }
-                }
-                scm {
-                    connection = 'https://github.com/ndagnas/progress-views.git'
-                    developerConnection = 'https://github.com/ndagnas/progress-views.git'
-                    url = 'https://github.com/ndagnas/progress-views'
-                }
-            }
-        }
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
@@ -60,4 +18,12 @@ allprojects {
         google()
         jcenter()
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+subprojects {
+    tasks.withType(Javadoc).all { enabled = false }
 }
